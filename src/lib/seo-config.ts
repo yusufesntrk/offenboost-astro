@@ -38,9 +38,9 @@ export const SITE_CONFIG = {
 // Page-specific SEO configurations
 export const PAGE_SEO = {
   home: {
-    title: "OffenBoost | Wachstumspartner aus Offenburg",
-    description: "Ihr Wachstumspartner für digitales Marketing, Recruiting und Automatisierung. Wir helfen Unternehmen planbar zu wachsen. Jetzt Erstgespräch buchen!",
-    keywords: "Wachstumspartner, Offenburg, Recruiting, Marketing, Automatisierung, Digitalisierung, Unternehmensberatung",
+    title: "OffenBoost – Recruiting, Marketing & Automatisierung aus Offenburg",
+    description: "Planbar wachsen mit OffenBoost aus Offenburg. Wir verbinden Recruiting, Marketing & Automatisierung zu einem System – für messbare Ergebnisse in der DACH-Region. Jetzt Erstgespräch buchen.",
+    keywords: "Recruiting Offenburg, Marketing Agentur Offenburg, Automatisierung KMU, Fachkräfte finden, Performance Marketing, Sales Automatisierung, Digitalisierung Mittelstand",
   },
   termin: {
     title: "Erstgespräch buchen | OffenBoost",

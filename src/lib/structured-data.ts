@@ -248,7 +248,7 @@ export const testimonialReviews = [
     role: "Geschäftsführer",
     company: "searched GmbH",
     quote:
-      "OffenBoost ist auf jeden Fall die schnellste Variante, um auf 500k im Monat zu skalieren!",
+      "Dank OffenBoost haben wir die Sparkasse als Kunden gewonnen und direkt eine 200k Upfront Fee kassiert.",
   },
   {
     name: "Nordin Begdouri",
@@ -275,6 +275,27 @@ export const testimonialReviews = [
     company: "Rendler & Hoferer",
     quote:
       "In kürzester Zeit genügend Anfragen für unsere Azubi-Stelle.",
+  },
+  {
+    name: "Rüdiger Bruns",
+    role: "Geschäftsführer",
+    company: "AMONOVA GmbH",
+    quote:
+      "Das 1:1 ist mit keinem anderen Dienstleister zu vergleichen. Man wird rund um die Uhr betreut und eigene Wünsche, die höchst individuell sind, werden umgesetzt.",
+  },
+  {
+    name: "Dr. Schmidt",
+    role: "Zahnarzt & Inhaber",
+    company: "Zahnärzte im Seerheincenter Konstanz",
+    quote:
+      "Durch OffenBoost haben wir nicht nur deutlich mehr Patienten gewonnen, sondern auch unsere komplette Praxisverwaltung automatisiert.",
+  },
+  {
+    name: "Dr. Frieder Baldner",
+    role: "Inhaber",
+    company: "Baldner's Gasthof Schwanen",
+    quote:
+      "Seit über 200 Jahren führen wir den Gasthof Schwanen in fünfter Generation. Mit OffenBoost haben wir den Sprung ins digitale Zeitalter geschafft.",
   },
 ];
 
