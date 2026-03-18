@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PAGE_SEO } from '../lib/seo-config';
+
+// React Island for interactive case studies
+import CasestudiesSection from '../components/react/CasestudiesSection';
+---
+
+<BaseLayout
+  title={PAGE_SEO.casestudies.title}
+  description={PAGE_SEO.casestudies.description}
+  canonical="/casestudies"
+>
+  <CasestudiesSection client:load />
+</BaseLayout>

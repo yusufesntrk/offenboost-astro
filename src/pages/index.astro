@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PAGE_SEO } from '../lib/seo-config';
+import { homePageSchemaComplete } from '../lib/structured-data';
+
+// Statische Astro-Komponenten
+import HeroSection from '../components/home/HeroSection.astro';
+import PartnerLogos from '../components/home/PartnerLogos.astro';
+import FeaturesSection from '../components/home/FeaturesSection.astro';
+import KPISection from '../components/home/KPISection.astro';
+import CTASection from '../components/home/CTASection.astro';
+import StepsSection from '../components/home/StepsSection.astro';
+
+// React Islands (interaktive Komponenten)
+import SystemsSection from '../components/react/SystemsSection';
+import ProductsSection from '../components/react/ProductsSection';
+import RoadmapSection from '../components/react/RoadmapSection';
+import TestimonialsSection from '../components/react/TestimonialsSection';
+import FAQSection from '../components/react/FAQSection';
+---
+
+<BaseLayout
+  title={PAGE_SEO.home.title}
+  description={PAGE_SEO.home.description}
+  canonical="/"
+  structuredData={homePageSchemaComplete}
+>
+  <HeroSection />
+  <PartnerLogos />
+  <SystemsSection client:visible />
+  <ProductsSection client:visible />
+  <RoadmapSection client:visible />
+  <KPISection />
+  <TestimonialsSection client:visible />
+  <FeaturesSection />
+  <CTASection />
+  <StepsSection />
+  <FAQSection client:visible />
+</BaseLayout>

@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PAGE_SEO } from '../lib/seo-config';
+import { serviceSchema } from '../lib/structured-data';
+import { TrendingUp, Target, Code, Lightbulb, ArrowRight } from 'lucide-react';
+
+// React Islands for animations
+import MarketingAnimation from '../components/animations/MarketingAnimation';
+import SalesAnimation from '../components/animations/SalesAnimation';
+import WebdevAnimation from '../components/animations/WebdevAnimation';
+import BeratungAnimation from '../components/animations/BeratungAnimation';
+
+const services = [
+  {
+    title: "Marketing & Growth",
+    description:
+      "Wir entwickeln und implementieren Marketing-Strategien, die messbare Ergebnisse liefern und Ihr Unternehmen nachhaltig wachsen lassen.",
+    features: [
+      "Lead Generation & Conversion Optimierung",
+      "Performance Marketing (Google Ads, Meta Ads)",
+      "Social Media Marketing & Management",
+      "Content Marketing & SEO",
+      "E-Mail Marketing & Automation",
+      "Analytics & Reporting",
+    ],
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Sales-Systeme",
+    description:
+      "Wir bauen Sales-Systeme, die Ihre Vertriebsprozesse automatisieren und Ihre Abschlussquote steigern.",
+    features: [
+      "CRM-Implementierung & Optimierung",
+      "Sales Automation & Workflows",
+      "Pipeline Management & Forecasting",
+      "Outreach-Systeme & Cold Email",
+      "Lead Scoring & Qualification",
+      "Sales Analytics & KPI Tracking",
+    ],
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "Webentwicklung",
+    description:
+      "Moderne, performante Websites und Web-Anwendungen, die Ihre Marke repräsentieren und konvertieren.",
+    features: [
+      "Corporate Websites & Landing Pages",
+      "Web-Applikationen & Dashboards",
+      "E-Commerce & Online-Shops",
+      "Responsive Design & Mobile First",
+      "Performance Optimierung",
+      "Wartung & Support",
+    ],
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    title: "Beratung",
+    description:
+      "Strategische Beratung für fundierte Entscheidungen und nachhaltiges Wachstum Ihres Unternehmens.",
+    features: [
+      "Strategie & Business Development",
+      "Prozessoptimierung & Digitalisierung",
+      "Marktanalyse & Positionierung",
+      "Workshops & Trainings",
+      "Projektmanagement",
+      "Interim Management",
+    ],
+    color: "from-green-500 to-emerald-500",
+  },
+];
+---
+
+<BaseLayout
+  title={PAGE_SEO.leistungen.title}
+  description={PAGE_SEO.leistungen.description}
+  canonical="/leistungen"
+  structuredData={serviceSchema}
+>
+  <main class="py-12 md:py-20 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 animate-fade-in">
+          <span class="text-foreground">Unsere </span>
+          <span class="gradient-text">Leistungen</span>
+        </h1>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Von Marketing über Sales bis zur Webentwicklung – wir bieten alle
+          Leistungen, die Sie für nachhaltiges Wachstum brauchen.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div class="space-y-12">
+        <!-- Marketing & Growth -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${services[0].color} flex items-center justify-center mb-6`}>
+              <TrendingUp className="w-8 h-8 text-white" />
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              {services[0].title}
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              {services[0].description}
+            </p>
+            <a
+              href="/termin"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-md shadow-primary/25"
+            >
+              Beratung anfragen
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          <div>
+            <MarketingAnimation client:visible />
+          </div>
+        </div>
+
+        <!-- Sales-Systeme -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="lg:order-2">
+            <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${services[1].color} flex items-center justify-center mb-6`}>
+              <Target className="w-8 h-8 text-white" />
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              {services[1].title}
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              {services[1].description}
+            </p>
+            <a
+              href="/termin"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-md shadow-primary/25"
+            >
+              Beratung anfragen
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          <div class="lg:order-1">
+            <SalesAnimation client:visible />
+          </div>
+        </div>
+
+        <!-- Webentwicklung -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${services[2].color} flex items-center justify-center mb-6`}>
+              <Code className="w-8 h-8 text-white" />
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              {services[2].title}
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              {services[2].description}
+            </p>
+            <a
+              href="/termin"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-md shadow-primary/25"
+            >
+              Beratung anfragen
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          <div>
+            <WebdevAnimation client:visible />
+          </div>
+        </div>
+
+        <!-- Beratung -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="lg:order-2">
+            <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${services[3].color} flex items-center justify-center mb-6`}>
+              <Lightbulb className="w-8 h-8 text-white" />
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              {services[3].title}
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              {services[3].description}
+            </p>
+            <a
+              href="/termin"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-md shadow-primary/25"
+            >
+              Beratung anfragen
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          <div class="lg:order-1">
+            <BeratungAnimation client:visible />
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-20 text-center">
+        <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 md:p-12 border border-primary/20">
+          <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Nicht sicher, was Sie brauchen?
+          </h2>
+          <p class="text-muted-foreground mb-8 max-w-xl mx-auto">
+            Kein Problem! Im kostenlosen Erstgespräch analysieren wir Ihre
+            Situation und empfehlen die passenden Lösungen.
+          </p>
+          <a
+            href="/termin"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white font-semibold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-md shadow-primary/25 glow-primary"
+          >
+            Kostenloses Erstgespräch buchen
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,4 @@
+# Redirect all domains to www.offenboost.de (301 permanent)
+https://offenboost.de/* https://www.offenboost.de/:splat 301
+https://offenboost.com/* https://www.offenboost.de/:splat 301
+https://www.offenboost.com/* https://www.offenboost.de/:splat 301

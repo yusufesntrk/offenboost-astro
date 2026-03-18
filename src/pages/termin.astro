@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PAGE_SEO } from '../lib/seo-config';
+import { bookingHowToSchema } from '../lib/structured-data';
+import { Check, Calendar, Clock, Video } from 'lucide-react';
+
+const benefits = [
+  {
+    title: "Marketing & Growth",
+    description:
+      "Lead-Generierung, Performance Marketing und Social Media Strategien, die messbare Ergebnisse liefern.",
+  },
+  {
+    title: "Sales-Systeme",
+    description:
+      "CRM-Implementierung, Sales Automation und Pipeline-Optimierung für mehr Abschlüsse.",
+  },
+  {
+    title: "Webentwicklung",
+    description:
+      "Moderne Websites, Web-Apps und E-Commerce Lösungen, die konvertieren.",
+  },
+  {
+    title: "Strategische Beratung",
+    description:
+      "Fundierte Beratung für Business Development, Prozessoptimierung und Wachstumsstrategien.",
+  },
+];
+---
+
+<BaseLayout
+  title={PAGE_SEO.termin.title}
+  description={PAGE_SEO.termin.description}
+  canonical="/termin"
+  structuredData={bookingHowToSchema}
+>
+  <main class="py-12 md:py-20 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 animate-fade-in">
+          <span class="text-foreground">Kostenloses </span>
+          <span class="gradient-text">Erstgespräch</span>
+        </h1>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Lernen Sie uns kennen und erfahren Sie, wie wir Ihr Unternehmen
+          beim Wachstum unterstützen können.
+        </p>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="grid md:grid-cols-3 gap-4 mb-12">
+        <div class="bg-card rounded-xl p-4 border border-border flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Clock className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <p class="font-medium text-foreground">30 Minuten</p>
+            <p class="text-sm text-muted-foreground">Gesprächsdauer</p>
+          </div>
+        </div>
+        <div class="bg-card rounded-xl p-4 border border-border flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Video className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <p class="font-medium text-foreground">Video-Call</p>
+            <p class="text-sm text-muted-foreground">Per Google Meet</p>
+          </div>
+        </div>
+        <div class="bg-card rounded-xl p-4 border border-border flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Calendar className="w-5 h-5 text-primary" />
+          </div>
+          <div>
+            <p class="font-medium text-foreground">Flexibel</p>
+            <p class="text-sm text-muted-foreground">Wähle deinen Termin</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- Calendly Embed -->
+        <div class="bg-card rounded-2xl overflow-hidden shadow-card border border-border animate-fade-in-up">
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/offenboost/erstgespraech?hide_landing_page_details=1&hide_event_type_details=1&hide_gdpr_banner=1&primary_color=3b82f6"
+            style="min-width: 320px; height: 700px;"
+          />
+        </div>
+
+        <!-- Benefits -->
+        <div class="animate-fade-in-up" style="animation-delay: 200ms;">
+          <h2 class="text-2xl font-bold text-foreground mb-8">
+            Wir unterstützen Sie bei:
+          </h2>
+
+          <div class="space-y-6">
+            {benefits.map((benefit) => (
+              <div class="flex items-start gap-4">
+                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-foreground mb-1">
+                    {benefit.title}
+                  </h3>
+                  <p class="text-sm text-muted-foreground">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-10 p-6 bg-muted/30 rounded-xl border border-border">
+            <p class="text-muted-foreground text-sm">
+              <strong class="text-foreground">Hinweis:</strong> Das
+              Erstgespräch ist kostenlos und unverbindlich. Wir analysieren
+              Ihre Situation und geben Ihnen ehrliches Feedback, ob und wie
+              wir helfen können.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Calendly Script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</BaseLayout>

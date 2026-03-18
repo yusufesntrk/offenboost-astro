@@ -1,0 +1,58 @@
+---
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/ueber-uns', label: 'Über uns' },
+  { href: '/casestudies', label: 'Case Studies' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') {
+    return pathname === '/';
+  }
+  return pathname.startsWith(href);
+}
+---
+
+<nav class="w-full py-4 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center justify-between bg-card rounded-2xl px-6 py-3 shadow-card border border-border/50">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 min-h-[44px]">
+        <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </div>
+        <span class="font-bold text-lg text-secondary">
+          Offen<span class="text-primary">Boost</span>
+        </span>
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center gap-2">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={isActive(link.href) ? 'nav-link-active' : 'nav-link'}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <a
+        href="/termin"
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 rounded-full px-4 text-sm"
+      >
+        Erstgespräch
+      </a>
+    </div>
+  </div>
+</nav>

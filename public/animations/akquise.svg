@@ -1,0 +1,276 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* Event cards slide in */
+    .event-card { animation: slideIn 0.4s ease-out forwards; opacity: 0; }
+    #event-1 { animation-delay: 0.2s; }
+    #event-2 { animation-delay: 0.3s; }
+    #event-3 { animation-delay: 0.4s; }
+    #event-4 { animation-delay: 0.5s; }
+    #event-5 { animation-delay: 0.6s; }
+    #event-6 { animation-delay: 0.7s; }
+    #event-7 { animation-delay: 0.8s; }
+    #event-8 { animation-delay: 0.9s; }
+    #event-9 { animation-delay: 1.0s; }
+    #event-10 { animation-delay: 1.1s; }
+    #event-11 { animation-delay: 1.2s; }
+    #event-12 { animation-delay: 1.3s; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Success badge scale in */
+    .success-badge { animation: scaleIn 0.5s ease-out 1.5s forwards; opacity: 0; transform: scale(0); transform-origin: 650px 300px; }
+    @keyframes scaleIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Sparkles twinkle */
+    .sparkle { animation: twinkle 1.5s ease-in-out infinite; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Notification dots pulse */
+    .notif-dot { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="calendarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#F9FAFB"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Calendar Container -->
+  <g id="calendar-container">
+    <rect x="60" y="50" width="500" height="500" rx="20" fill="url(#calendarGradient)" stroke="#E5E7EB" stroke-width="2" filter="url(#shadow)"/>
+
+    <!-- Calendar Header -->
+    <rect x="60" y="50" width="500" height="70" rx="20" fill="#FFFFFF"/>
+    <rect x="60" y="100" width="500" height="20" fill="#FFFFFF"/>
+
+    <!-- + Eintragen Button -->
+    <rect x="85" y="70" width="95" height="32" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+    <text x="132" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#374151">+ Eintragen</text>
+
+    <!-- Navigation -->
+    <text x="220" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9CA3AF">‹</text>
+    <text x="270" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#374151">Heute</text>
+    <text x="320" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9CA3AF">›</text>
+
+    <!-- Month Title -->
+    <text x="450" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Januar 2026</text>
+
+    <!-- Day Headers -->
+    <g id="day-headers" transform="translate(195, 145)">
+      <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#9CA3AF">MO</text>
+      <text x="55" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#9CA3AF">DI</text>
+      <text x="110" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#9CA3AF">MI</text>
+      <text x="165" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#9CA3AF">DO</text>
+      <text x="220" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#9CA3AF">FR</text>
+      <text x="275" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#9CA3AF">SA</text>
+      <text x="330" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">SO</text>
+    </g>
+
+    <!-- Day Numbers -->
+    <g id="day-numbers" transform="translate(195, 175)">
+      <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#1F2937">4</text>
+      <text x="55" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#1F2937">5</text>
+      <text x="110" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#1F2937">6</text>
+      <text x="165" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#1F2937">7</text>
+      <text x="220" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#1F2937">8</text>
+      <text x="275" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#1F2937">9</text>
+      <text x="330" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#6B7280">10</text>
+    </g>
+
+    <!-- Event Row 1 -->
+    <g id="events-row-1" transform="translate(170, 195)">
+      <!-- Event 1 - Blue -->
+      <g class="event-card" id="event-1">
+        <rect x="0" y="0" width="48" height="70" rx="6" fill="#3B82F6"/>
+        <circle class="notif-dot" cx="24" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="24" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="24" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="24" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#BFDBFE">9 AM</text>
+      </g>
+
+      <!-- Event 2 - Blue -->
+      <g class="event-card" id="event-2">
+        <rect x="55" y="0" width="48" height="70" rx="6" fill="#3B82F6"/>
+        <circle class="notif-dot" cx="79" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="79" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="79" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="79" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#BFDBFE">9 AM</text>
+      </g>
+
+      <!-- Event 3 - Purple -->
+      <g class="event-card" id="event-3">
+        <rect x="110" y="0" width="48" height="70" rx="6" fill="#8B5CF6"/>
+        <circle class="notif-dot" cx="134" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="134" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="134" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="134" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#DDD6FE">10 AM</text>
+      </g>
+
+      <!-- Event 4 - Green -->
+      <g class="event-card" id="event-4">
+        <rect x="165" y="0" width="48" height="70" rx="6" fill="#10B981"/>
+        <circle class="notif-dot" cx="189" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="189" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="189" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="189" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#A7F3D0">10 AM</text>
+      </g>
+
+      <!-- Event 5 - Blue -->
+      <g class="event-card" id="event-5">
+        <rect x="220" y="0" width="48" height="70" rx="6" fill="#3B82F6"/>
+        <circle class="notif-dot" cx="244" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="244" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="244" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="244" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#BFDBFE">10 AM</text>
+      </g>
+
+      <!-- Event 6 - Purple -->
+      <g class="event-card" id="event-6">
+        <rect x="275" y="0" width="48" height="70" rx="6" fill="#8B5CF6"/>
+        <circle class="notif-dot" cx="299" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="299" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="299" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="299" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#DDD6FE">11 AM</text>
+      </g>
+    </g>
+
+    <!-- Event Row 2 -->
+    <g id="events-row-2" transform="translate(170, 280)">
+      <!-- Event 7 - Blue -->
+      <g class="event-card" id="event-7">
+        <rect x="0" y="0" width="48" height="70" rx="6" fill="#3B82F6"/>
+        <circle class="notif-dot" cx="24" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="24" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="24" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="24" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#BFDBFE">10 AM</text>
+      </g>
+
+      <!-- Event 8 - Blue -->
+      <g class="event-card" id="event-8">
+        <rect x="55" y="0" width="48" height="70" rx="6" fill="#3B82F6"/>
+        <circle class="notif-dot" cx="79" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="79" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="79" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="79" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#BFDBFE">9 AM</text>
+      </g>
+
+      <!-- Event 9 - Purple -->
+      <g class="event-card" id="event-9">
+        <rect x="110" y="0" width="48" height="70" rx="6" fill="#8B5CF6"/>
+        <circle class="notif-dot" cx="134" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="134" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="134" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="134" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#DDD6FE">12 PM</text>
+      </g>
+
+      <!-- Event 10 - Green -->
+      <g class="event-card" id="event-10">
+        <rect x="165" y="0" width="48" height="70" rx="6" fill="#10B981"/>
+        <circle class="notif-dot" cx="189" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="189" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="189" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="189" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#A7F3D0">11 AM</text>
+      </g>
+
+      <!-- Event 11 - Blue -->
+      <g class="event-card" id="event-11">
+        <rect x="220" y="0" width="48" height="70" rx="6" fill="#3B82F6"/>
+        <circle class="notif-dot" cx="244" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="244" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="244" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="244" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#BFDBFE">12 PM</text>
+      </g>
+
+      <!-- Event 12 - Purple -->
+      <g class="event-card" id="event-12">
+        <rect x="275" y="0" width="48" height="70" rx="6" fill="#8B5CF6"/>
+        <circle class="notif-dot" cx="299" cy="12" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="299" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Neues</text>
+        <text x="299" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="500" fill="#FFFFFF">Event</text>
+        <text x="299" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#DDD6FE">3 PM</text>
+      </g>
+    </g>
+
+    <!-- Mini Calendar -->
+    <g id="mini-calendar" transform="translate(80, 145)">
+      <text x="35" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2937">März</text>
+      <text x="68" y="0" font-family="Arial, sans-serif" font-size="11" fill="#9CA3AF">‹ ›</text>
+
+      <!-- Mini calendar grid -->
+      <g transform="translate(0, 18)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">S</text>
+        <text x="14" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">M</text>
+        <text x="28" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">D</text>
+        <text x="42" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">M</text>
+        <text x="56" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">D</text>
+        <text x="70" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">F</text>
+        <text x="84" y="0" font-family="Arial, sans-serif" font-size="10" fill="#9CA3AF">S</text>
+      </g>
+
+      <g transform="translate(0, 35)">
+        <text x="70" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">1</text>
+        <text x="84" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">2</text>
+      </g>
+
+      <g transform="translate(0, 50)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">3</text>
+        <text x="14" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">4</text>
+        <text x="28" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">5</text>
+        <text x="42" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">6</text>
+        <text x="56" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">7</text>
+        <text x="70" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">8</text>
+        <text x="84" y="0" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">9</text>
+      </g>
+    </g>
+
+    <!-- Legend -->
+    <g id="legend" transform="translate(80, 280)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#1F2937">Treffen mit...</text>
+
+      <circle cx="8" cy="22" r="6" fill="#3B82F6"/>
+      <text x="22" y="26" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">Beruflich</text>
+
+      <circle cx="8" cy="44" r="6" fill="#F59E0B"/>
+      <text x="22" y="48" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">Feiertage</text>
+
+      <circle cx="8" cy="66" r="6" fill="#8B5CF6"/>
+      <text x="22" y="70" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">Privat</text>
+    </g>
+  </g>
+
+  <!-- Success Badge -->
+  <g class="success-badge" id="success-badge">
+    <circle cx="650" cy="300" r="70" fill="#3B82F6" filter="url(#shadow)"/>
+    <circle cx="650" cy="300" r="60" fill="#DBEAFE"/>
+    <text x="650" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#1E40AF">12+</text>
+    <text x="650" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#1E40AF">Termine/Woche</text>
+
+    <g class="sparkle"><text x="580" y="265" font-size="20">✨</text></g>
+    <g class="sparkle"><text x="715" y="285" font-size="20">✨</text></g>
+    <g class="sparkle"><text x="650" y="380" font-size="20">✨</text></g>
+  </g>
+</svg>
